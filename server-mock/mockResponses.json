@@ -6,7 +6,7 @@
       "descripcion": "Una pala de alta calidad para jugadores avanzados.",
       "precio": 149.99,
       "stock": 15,
-      "imagen": "pala-profesional.jpg",
+      "imagen": "@images/pala_padel.jpg",
       "detalles": {
         "marca": "Marca de Pádel Pro",
         "material": "Fibra de carbono",
@@ -23,7 +23,7 @@
       "descripcion": "Pelotas de pádel de alto rendimiento.",
       "precio": 9.99,
       "stock": 50,
-      "imagen": "pelotas-padel.jpg",
+      "imagen": "@images/pelotas_padel.png",
       "detalles": {
         "marca": "Pelotas Master",
         "tipo": "Presión baja",
@@ -39,7 +39,7 @@
       "descripcion": "Una hora de clases con un entrenador profesional.",
       "precio": 35.0,
       "stock": 10,
-      "imagen": "clases-padel.jpg",
+      "imagen": "@images/classe_padel.png",
       "detalles": {
         "duración": "1 hora",
         "entrenador": "Juan Pérez",
@@ -53,7 +53,7 @@
       "descripcion": "Clases de pádel para mejorar tus habilidades.",
       "precio": 50.0,
       "stock": 8,
-      "imagen": "clases-padel-90-min.jpg",
+      "imagen": "@images/classe_padel_90.png",
       "detalles": {
         "duración": "90 minutos",
         "entrenador": "Ana Martínez",
@@ -67,7 +67,7 @@
       "descripcion": "Una raqueta de tenis de gama media.",
       "precio": 89.99,
       "stock": 20,
-      "imagen": "raqueta-tenis.jpg",
+      "imagen": "@images/raqueta_tennis.png",
       "detalles": {
         "marca": "Marca de Tenis Pro",
         "material del marco": "Aluminio",
@@ -81,7 +81,7 @@
       "descripcion": "Zapatillas diseñadas para jugar pádel cómodamente.",
       "precio": 79.99,
       "stock": 30,
-      "imagen": "zapatillas-padel.jpg",
+      "imagen": "@images/zapatillas_padel.png",
       "detalles": {
         "marca": "Zapatillas Deportivas Pro",
         "material superior": "Malla transpirable",
@@ -95,7 +95,7 @@
       "descripcion": "Un conjunto de accesorios esenciales para el pádel.",
       "precio": 19.99,
       "stock": 25,
-      "imagen": "accesorios-padel.jpg",
+      "imagen": "@images/accesorios_padel.png",
       "detalles": {
         "incluye": ["Overgrips", "Muñequeras", "Cintas de agarre"],
         "marcas de los accesorios": ["Marca A", "Marca B"],
@@ -108,7 +108,7 @@
       "descripcion": "Una camiseta transpirable para deportes.",
       "precio": 24.99,
       "stock": 40,
-      "imagen": "camiseta-deportiva.jpg",
+      "imagen": "@images/camiseta_padel.png",
       "detalles": {
         "marca": "Ropa Deportiva Pro",
         "material": "Poliéster transpirable",
@@ -122,7 +122,7 @@
       "descripcion": "Una gorra cómoda para protegerse del sol en la cancha.",
       "precio": 14.99,
       "stock": 15,
-      "imagen": "gorra-padel.jpg",
+      "imagen": "@images/gorra_padel.png",
       "detalles": {
         "marca": "Accesorios Pádel Pro",
         "material": "Algodón y poliéster",
@@ -136,7 +136,7 @@
       "descripcion": "Una toalla de secado rápido para deportistas.",
       "precio": 12.99,
       "stock": 30,
-      "imagen": "toalla-deportiva.jpg",
+      "imagen": "@images/toalla_padel.png",
       "detalles": {
         "material": "Microfibra",
         "dimensiones": "40cm x 80cm",

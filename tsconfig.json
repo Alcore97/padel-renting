@@ -24,6 +24,12 @@
       "dom"
     ]
   },
+  "paths":{
+    "@app/*":["src/app/*"],
+    "@images/*": ["src/assets/images/*"],
+    "@shared/*": ["src/app/shared/*"],
+    "@components/*": ["src/app/components/*"]
+  },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

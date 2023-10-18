@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "start:mock": "start npm run start && start json-server --watch mockResponses.json",
+    "start:mock": "start npm run start && start json-server --watch ./server-mock/mockResponses.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

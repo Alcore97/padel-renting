@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body,
+app-root {
+  //This defines what 1rem is
+  height: 100vh;
+  scroll-behavior: smooth;
+  margin: 0;
+  display: grid;
+}

@@ -8,3 +8,8 @@ app-root {
   margin: 0;
   display: grid;
 }
+
+@import "./assets/sass/breakpoints.scss";
+@import "./assets/sass/mixins.scss";
+@import "./assets/sass/variables.scss";
+@import "./assets/sass/fonts.scss";

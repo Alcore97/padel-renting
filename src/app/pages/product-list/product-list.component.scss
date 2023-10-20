@@ -1,0 +1,14 @@
+@import "./../../../styles.scss";
+
+.product-list {
+  * {
+    font-family: $primaryFont;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    font-family: $primaryFont;
+  }
+}

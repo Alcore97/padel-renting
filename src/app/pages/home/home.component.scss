@@ -1,0 +1,37 @@
+@import "../../../styles.scss";
+
+* {
+  font-family: $primaryFont;
+}
+
+.home {
+  &__title {
+    display: flex;
+    font-size: 48px;
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+    color: $primaryText;
+    padding: 16px;
+    > p {
+      margin: 0;
+    }
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    color: $primaryText;
+    padding: 16px;
+    > p {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    padding: 16px;
+    text-align: center;
+  }
+}

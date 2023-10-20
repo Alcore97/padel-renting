@@ -1,7 +1,7 @@
 /* header.component.scss */
-@import "../../../assets/sass/variables.scss";
+@import "../../../styles.scss";
 
-@media (max-width: 415px) {
+@include mobile {
   .header {
     &__container {
       display: flex;
@@ -32,6 +32,8 @@
     &__tab--link {
       text-decoration: none;
       color: $primaryText;
+      font-size: larger;
+      font-weight: 700;
     }
   }
 }

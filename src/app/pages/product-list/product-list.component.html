@@ -1,2 +1,9 @@
-<p>product-list works!</p>
+<div class="product-list__container">
+  <p>Lista de productos</p>
+  <app-product-card
+    *ngFor="let item of productListResponse"
+    [product]="item"
+  ></app-product-card>
+</div>
+
 <button routerLink="">Anar a la home</button>

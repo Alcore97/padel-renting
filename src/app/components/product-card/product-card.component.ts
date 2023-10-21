@@ -10,7 +10,7 @@ import { PadelProduct } from '@app/pages/product-list/services/product-list.mode
   imports: [CommonModule],
 })
 export class ProductCardComponent {
-  @Input() product: PadelProduct;
+  @Input() product: any;
   @Input() isInCart: boolean = false;
 
   @Output() addToCardEvent = new EventEmitter<any>();

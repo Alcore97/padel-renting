@@ -1,23 +1,30 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductCardComponent } from '@app/components/product-card/product-card.component';
 import { ProductDetailModalComponent } from '@app/components/product-detail-modal/product-detail-modal.component';
-import { useCartStore } from 'src/store/cartStore';
+import { Store } from '@ngrx/store';
+import { first } from 'rxjs';
+import { removeFromCart } from 'src/store/cart-actions';
+import { selectCartItems } from 'src/store/cart-state';
 
 @Component({
   standalone: true,
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.sass'],
-  imports: [RouterModule, ProductCardComponent],
+  imports: [RouterModule, ProductCardComponent, CommonModule],
 })
 export class CartComponent {
-  // public storedProducts = useCartStore((state) => state.cart);
+  constructor(private store: Store) {}
 
-  ngOnInit() {}
+  storedProducts = this.store.select(selectCartItems);
+
+  ngOnInit() {
+    this.storedProducts.subscribe((state) => console.log(state));
+  }
 
   removeFormCart(productToRemove: any) {
-    // const removeFromCart = useCartStore((state) => state.removeFromCart);
-    // removeFromCart(productToRemove);
+    this.store.dispatch(removeFromCart({ productId: productToRemove.id }));
   }
 }

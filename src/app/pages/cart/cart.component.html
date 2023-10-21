@@ -1,6 +1,6 @@
 <p>cart works!</p>
 <app-product-card
-  *ngFor="let item of storedProducts"
+  *ngFor="let item of storedProducts | async"
   [product]="item"
   [isInCart]="true"
   (removeFromCartEvent)="removeFormCart($event)"

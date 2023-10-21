@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PadelProduct } from '@app/pages/product-list/services/product-list.model';
 
 @Component({
@@ -6,15 +7,28 @@ import { PadelProduct } from '@app/pages/product-list/services/product-list.mode
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
+  imports: [CommonModule],
 })
 export class ProductCardComponent {
   @Input() product: PadelProduct;
+  @Input() isInCart: boolean = false;
 
-  ngOnInit(): void {
-    console.log(this.product);
+  @Output() addToCardEvent = new EventEmitter<any>();
+  @Output() viewDetailsEvent = new EventEmitter<any>();
+  @Output() removeFromCartEvent = new EventEmitter<any>();
+
+  ngOnInit(): void {}
+
+  addToCart(idProduct: number) {
+    this.addToCardEvent.emit(idProduct);
+    // Implementa la lógica para añadir el producto al carrito aquí
   }
 
-  addToCart() {
-    // Implementa la lógica para añadir el producto al carrito aquí
+  viewDetails(idProduct: number) {
+    this.viewDetailsEvent.emit(idProduct);
+  }
+
+  removeFromCart(idProduct: number) {
+    this.removeFromCartEvent.emit(idProduct);
   }
 }

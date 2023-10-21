@@ -6,7 +6,7 @@
       "descripcion": "Una pala de alta calidad para jugadores avanzados.",
       "precio": 149.99,
       "stock": 15,
-      "imagen": "assets/images/pala_padel",
+      "imagen": "assets/images/pala_padel.png",
       "detalles": {
         "marca": "Marca de Pádel Pro",
         "material": "Fibra de carbono",

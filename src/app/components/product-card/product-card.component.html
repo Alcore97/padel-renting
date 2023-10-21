@@ -10,9 +10,18 @@
     <p class="card-text">
       <strong>Precio: ${{ product.precio }}</strong>
     </p>
-    <button class="btn btn-primary" (click)="addToCart()">
-      Añadir al Carrito
+    <div *ngIf="!isInCart">
+      <button class="btn btn-primary" (click)="addToCart(product.id)">
+        Añadir al Carrito
+      </button>
+    </div>
+    <div *ngIf="isInCart">
+      <button class="btn btn-primary" (click)="removeFromCart(product.id)">
+        Remover del Carrito
+      </button>
+    </div>
+    <button class="btn btn-secondary" (click)="viewDetails(product.id)">
+      Ver Detalles
     </button>
-    <button class="btn btn-secondary">Ver Detalles</button>
   </div>
 </div>

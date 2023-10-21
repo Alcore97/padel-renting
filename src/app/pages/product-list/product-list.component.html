@@ -1,9 +1,18 @@
 <div class="product-list__container">
+  <button routerLink="">Anar a la home</button>
+  <button routerLink="/cart">Anar a la cistella</button>
   <p>Lista de productos</p>
   <app-product-card
     *ngFor="let item of productListResponse"
     [product]="item"
+    [isInCart]="false"
+    (addToCardEvent)="storeToCart(item)"
+    (viewDetailsEvent)="openProductDetailModal($event)"
   ></app-product-card>
+  <div class="product-list__modal" *ngIf="showModal">
+    <app-product-detail-modal
+      [product]="productDetailsToShow"
+      (closeModalEvent)="closeModal()"
+    ></app-product-detail-modal>
+  </div>
 </div>
-
-<button routerLink="">Anar a la home</button>

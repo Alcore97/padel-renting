@@ -10,8 +10,6 @@ import { HeaderComponent } from '@components/header/header.component';
   imports: [HeaderComponent, FooterComponent],
 })
 export class HomeComponent {
-  public homeIMG = '../../../assets/images/inicio2_img';
-  ngOnInit(): void {
-    console.log(this.homeIMG);
-  }
+  public homeIMG = '../../../assets/images/inicio.png';
+  ngOnInit(): void {}
 }

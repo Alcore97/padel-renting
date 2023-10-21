@@ -1,2 +1,8 @@
 <p>cart works!</p>
+<app-product-card
+  *ngFor="let item of storedProducts"
+  [product]="item"
+  [isInCart]="true"
+  (removeFromCartEvent)="removeFormCart($event)"
+></app-product-card>
 <button routerLink="">Anar a la home</button>

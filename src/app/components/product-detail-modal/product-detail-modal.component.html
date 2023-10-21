@@ -1,0 +1,16 @@
+<div class="modal-background" (click)="closeModal()"></div>
+<div class="modal-container">
+  <div class="modal-header">
+    <h3>Detalles de: {{ product.nombre }}</h3>
+    <div (click)="closeModal()">
+      <img src="../../../assets/icons/x.svg" />
+    </div>
+  </div>
+  <div class="modal-content">
+    <ul>
+      <li *ngFor="let item of combinedData">
+        {{ item.label }}: {{ item.value }}
+      </li>
+    </ul>
+  </div>
+</div>

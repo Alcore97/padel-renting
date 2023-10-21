@@ -1,0 +1,54 @@
+/* product-detail-modal.component.scss */
+p,
+h3 {
+  margin: 0;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscurecido con transparencia */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* Asegura que el fondo esté detrás del modal */
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Asegura que el modal esté por encima del fondo oscurecido */
+  max-width: 80%;
+  transform: translate(5%, 50%);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.modal-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+/* Puedes agregar más estilos según tus necesidades */

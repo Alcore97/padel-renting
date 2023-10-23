@@ -1,0 +1,9 @@
+<mat-toolbar class="bottom-navbar">
+  <mat-icon
+    class="bottom-navbar__icon"
+    *ngFor="let item of navigationItems; let i = index"
+    (click)="navigate(i)"
+    [ngClass]="{ active: i === selectedIndex }"
+    >{{ item.icon }}</mat-icon
+  >
+</mat-toolbar>

@@ -1,30 +1,39 @@
 <div class="card">
-  <img
-    src="{{ product.imagen }}"
-    class="card-img-top"
-    alt="{{ product.nombre }}"
-  />
-  <div class="card-body">
-    <h5 class="card-title">{{ product.nombre }}</h5>
-    <p class="card-text">{{ product.descripcion }}</p>
-    <p class="card-text">
-      <strong>Precio: ${{ product.precio }}</strong>
-      <br />
-      <strong *ngIf="!isInCart">Numero en stock: {{ product.stock }}</strong>
-    </p>
+  <div class="card-left">
+    <img
+      src="{{ product.imagen }}"
+      class="card-img-top"
+      alt="{{ product.nombre }}"
+      width="100"
+      height="100"
+    />
     <div *ngIf="!isInCart">
       <button class="btn btn-primary" (click)="addToCart(product.id)">
-        Añadir al Carrito
+        Afageix
       </button>
     </div>
     <div *ngIf="isInCart">
-      <button class="btn btn-primary" (click)="removeFromCart(product.id)">
-        Remover del Carrito
+      <button
+        class="btn btn-primary-remove"
+        (click)="removeFromCart(product.id)"
+      >
+        Treu
       </button>
     </div>
-    <button class="btn btn-secondary" (click)="viewDetails(product.id)">
-      Ver Detalles
-    </button>
-    <div *ngIf="isInCart">x{{ product.quantity }}</div>
+  </div>
+  <div class="cart-right">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.nombre }}</h5>
+      <p class="card-text">
+        <strong>Precio: ${{ product.precio }}</strong>
+        <br />
+        <strong *ngIf="!isInCart">Numero en stock: {{ product.stock }}</strong>
+      </p>
+
+      <button class="btn btn-secondary" (click)="viewDetails(product.id)">
+        Visualitza els detalls
+      </button>
+      <div *ngIf="isInCart">x{{ product.quantity }}</div>
+    </div>
   </div>
 </div>

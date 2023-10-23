@@ -10,7 +10,7 @@ import {
 import { ProductCardComponent } from '@app/components/product-card/product-card.component';
 import { ProductDetailModalComponent } from '@app/components/product-detail-modal/product-detail-modal.component';
 import { CartService } from '../cart/services/cart.service';
-import { FooterComponent } from '@app/components/footer/footer.component';
+import { BottomNavbarComponent } from '@app/components/bottom-navbar/bottom-navbar.component';
 
 @Component({
   standalone: true,
@@ -22,7 +22,7 @@ import { FooterComponent } from '@app/components/footer/footer.component';
     CommonModule,
     ProductCardComponent,
     ProductDetailModalComponent,
-    FooterComponent,
+    BottomNavbarComponent,
   ],
 })
 export class ProductListComponent {

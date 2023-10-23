@@ -1,0 +1,21 @@
+@import "./../../../styles.scss";
+
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-around;
+  background-color: $primaryNavbar;
+  &__icon {
+    border: 1px solid black;
+    border-radius: 36px;
+    padding: 8px;
+    background: $whiteBackground;
+    opacity: 0.6; /* Íconos inactivos con una opacidad reducida (ajusta según tus preferencias) */
+    transition: opacity 0.3s;
+  }
+}
+
+.active {
+  opacity: 1; /* Color para el ícono activo */
+}

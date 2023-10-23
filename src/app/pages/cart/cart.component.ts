@@ -5,7 +5,7 @@ import { ProductDetailModalComponent } from '@app/components/product-detail-moda
 import { CartService } from './services/cart.service';
 import { PadelProduct } from '../product-list/services/product-list.model';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from '@app/components/footer/footer.component';
+import { BottomNavbarComponent } from '@app/components/bottom-navbar/bottom-navbar.component';
 
 @Component({
   standalone: true,
@@ -16,8 +16,8 @@ import { FooterComponent } from '@app/components/footer/footer.component';
     RouterModule,
     ProductCardComponent,
     CommonModule,
-    FooterComponent,
     ProductDetailModalComponent,
+    BottomNavbarComponent,
   ],
 })
 export class CartComponent {

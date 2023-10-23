@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { PurchasedProductsService } from './services/purchased-products.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { BottomNavbarComponent } from '@app/components/bottom-navbar/bottom-navbar.component';
 
 @Component({
   standalone: true,
   selector: 'app-purchased-products',
   templateUrl: './purchased-products.component.html',
   styleUrls: ['./purchased-products.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, BottomNavbarComponent],
 })
 export class PurchasedProductsComponent {
   purchasedProducts: any[] = [];

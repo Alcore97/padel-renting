@@ -1,7 +1,5 @@
 <div class="product-list__container">
-  <button routerLink="">Anar a la home</button>
-  <button routerLink="/cart">Anar a la cistella</button>
-  <p>Lista de productos</p>
+  <p class="product-list__title">Productes</p>
   <app-product-card
     *ngFor="let item of productListResponse"
     [product]="item"
@@ -15,5 +13,5 @@
       (closeModalEvent)="closeModal()"
     ></app-product-detail-modal>
   </div>
-  <app-footer></app-footer>
 </div>
+<app-bottom-navbar [selectedIndex]="1"></app-bottom-navbar>

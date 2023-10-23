@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '@components/footer/footer.component';
-import { HeaderComponent } from '@components/header/header.component';
+import { BottomNavbarComponent } from '@app/components/bottom-navbar/bottom-navbar.component';
 
 @Component({
   standalone: true,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [HeaderComponent, FooterComponent],
+  imports: [BottomNavbarComponent],
 })
 export class HomeComponent {
   public homeIMG = '../../../assets/images/inicio.png';

@@ -1,2 +1,15 @@
 <p>payment works!</p>
 <button routerLink="">Anar a la home</button>
+<h2>Proceso de Pago</h2>
+<form>
+  <label for="cardNumber">Número de Tarjeta:</label>
+  <input
+    type="text"
+    id="cardNumber"
+    [(ngModel)]="cardNumber"
+    name="cardNumber"
+  />
+  <p>Total a Pagar: ${{ totalAmount.toFixed(2) }}</p>
+  <button (click)="makePayment()">Realizar Pago</button>
+</form>
+<button (click)="goToProductsList()">Volver a la Lista de Productos</button>

@@ -9,7 +9,8 @@ import {
 } from './services/product-list.model';
 import { ProductCardComponent } from '@app/components/product-card/product-card.component';
 import { ProductDetailModalComponent } from '@app/components/product-detail-modal/product-detail-modal.component';
-import { useCartStore } from 'src/store/cartStore';
+import { CartService } from '../cart/services/cart.service';
+import { FooterComponent } from '@app/components/footer/footer.component';
 
 @Component({
   standalone: true,
@@ -21,13 +22,17 @@ import { useCartStore } from 'src/store/cartStore';
     CommonModule,
     ProductCardComponent,
     ProductDetailModalComponent,
+    FooterComponent,
   ],
 })
 export class ProductListComponent {
   public productListResponse: any;
   public showModal: boolean = false;
   public productDetailsToShow: PadelProduct;
-  constructor(private _productListMockServices: ProductListDataService) {}
+  constructor(
+    private _productListMockServices: ProductListDataService,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.getProductListFromService();
@@ -56,6 +61,6 @@ export class ProductListComponent {
   }
 
   storeToCart(productToStore: any) {
-    // this.addToCart(productToStore);
+    this.cartService.addToCart(productToStore, this.productListResponse);
   }
 }

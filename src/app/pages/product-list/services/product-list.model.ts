@@ -11,6 +11,7 @@ export interface PadelProduct {
   precio: number;
   stock: number;
   imagen: string;
+  quantity: number; // Nuevo campo
   detalles: Detalles;
 }
 

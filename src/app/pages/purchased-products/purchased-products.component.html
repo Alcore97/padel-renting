@@ -1,0 +1,12 @@
+<p>purchased-products works!</p>
+<h2>Productos Comprados</h2>
+
+<ul>
+  <li *ngFor="let product of purchasedProducts">
+    {{ product.nombre }} - {{ product.precio | currency }}
+  </li>
+</ul>
+
+<p>Total Pagado: {{ totalPaidAmount | currency }}</p>
+
+<button (click)="goToProductsList()">Volver a la Lista de Productos</button>

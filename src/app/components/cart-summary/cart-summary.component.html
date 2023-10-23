@@ -1,0 +1,37 @@
+<div *ngIf="cartItems.length > 0">
+  <h2>Resumen de Carrito</h2>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      <div>
+        <h3>{{ item.nombre }}</h3>
+        <p>Cantidad: {{ item.quantity }}</p>
+        <p>Precio por unidad: ${{ item.precio }}</p>
+        <p>Subtotal: ${{ item.quantity * item.precio }}</p>
+      </div>
+    </li>
+  </ul>
+  <p>Total: ${{ getTotal().toFixed(2) }}</p>
+  <div>
+    <label for="discountCode">Código de Descuento:</label>
+    <input
+      type="text"
+      id="discountCode"
+      [(ngModel)]="discountCode"
+      name="discountCode"
+    />
+    <button (click)="applyDiscount()">Aplicar Descuento</button>
+    <p class="success-message" *ngIf="discountAppliedMessage">
+      {{ discountAppliedMessage }}
+    </p>
+    <p class="error-message" *ngIf="showDiscountCodeError">
+      Código de descuento no válido
+    </p>
+    <p class="error-message" *ngIf="showFijo2DiscountError">
+      Ya has usado este código 3 veces
+    </p>
+  </div>
+
+  <p>Total con Descuento: ${{ calculateTotalWithDiscount() }}</p>
+  <button (click)="checkout()">Acceder a Realizar Pago</button>
+</div>
+<p *ngIf="cartItems.length === 0">Tu carrito está vacío.</p>

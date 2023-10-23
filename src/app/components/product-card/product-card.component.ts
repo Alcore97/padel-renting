@@ -20,7 +20,7 @@ export class ProductCardComponent {
   ngOnInit(): void {}
 
   addToCart(idProduct: number) {
-    this.addToCardEvent.emit(idProduct);
+    this.addToCardEvent.emit();
     // Implementa la lógica para añadir el producto al carrito aquí
   }
 
@@ -29,6 +29,6 @@ export class ProductCardComponent {
   }
 
   removeFromCart(idProduct: number) {
-    this.removeFromCartEvent.emit(idProduct);
+    this.removeFromCartEvent.emit();
   }
 }

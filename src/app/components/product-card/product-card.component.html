@@ -9,6 +9,8 @@
     <p class="card-text">{{ product.descripcion }}</p>
     <p class="card-text">
       <strong>Precio: ${{ product.precio }}</strong>
+      <br />
+      <strong *ngIf="!isInCart">Numero en stock: {{ product.stock }}</strong>
     </p>
     <div *ngIf="!isInCart">
       <button class="btn btn-primary" (click)="addToCart(product.id)">
@@ -23,5 +25,6 @@
     <button class="btn btn-secondary" (click)="viewDetails(product.id)">
       Ver Detalles
     </button>
+    <div *ngIf="isInCart">x{{ product.quantity }}</div>
   </div>
 </div>

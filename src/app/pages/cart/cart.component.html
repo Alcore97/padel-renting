@@ -1,8 +1,21 @@
-<p>cart works!</p>
+<p>Cistella del productes selectionats</p>
+<button routerLink="">Anar a la home</button>
+<div *ngIf="cartProducts.length === 0">No hi ha productes seleccionats</div>
 <app-product-card
-  *ngFor="let item of storedProducts"
+  *ngFor="let item of cartProducts"
   [product]="item"
   [isInCart]="true"
-  (removeFromCartEvent)="removeFormCart($event)"
+  (viewDetailsEvent)="viewDetailsFromCart(item)"
+  (removeFromCartEvent)="removeFormCart(item)"
 ></app-product-card>
-<button routerLink="">Anar a la home</button>
+<div class="cart-list__modal" *ngIf="showModal">
+  <app-product-detail-modal
+    [product]="productDetailsToShow"
+    (closeModalEvent)="closeModal()"
+  ></app-product-detail-modal>
+</div>
+<button *ngIf="cartProducts.length !== 0" routerLink="/precheckout">
+  Accedeix al pas previ a pagar
+</button>
+
+<app-footer></app-footer>

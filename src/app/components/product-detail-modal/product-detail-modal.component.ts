@@ -17,6 +17,7 @@ export class ProductDetailModalComponent {
   public combinedData: any;
   ngOnInit() {
     this.combineDetails();
+    console.log(this.product);
   }
 
   closeModal() {

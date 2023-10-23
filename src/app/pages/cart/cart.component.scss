@@ -1,4 +1,26 @@
+@import "../../../styles.scss";
 .cart-list {
+  &__container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    font-family: $primaryFont;
+    align-items: center;
+    gap: 8px;
+
+    max-height: calc(
+      100vh - 56px
+    ); /* Resta la altura de la barra de navegación */
+    overflow: hidden; /* Oculta el desbordamiento */
+    position: relative;
+  }
+
+  &__inner {
+    max-height: 100%; /* Ajusta el alto máximo del contenedor interno al 100% */
+    overflow-y: auto; /* Agrega una barra de desplazamiento si es necesario */
+    padding: 0 16px;
+  }
   &__modal {
     position: fixed;
     top: 50%;
@@ -7,4 +29,38 @@
     width: 100%;
     height: 100%;
   }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    background-color: $primaryBoxes;
+    border: 1px solid $primaryBoxes;
+    width: fit-content;
+    padding: 12px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+    margin-top: 8px;
+  }
+  &__secondarytTitle {
+    background-color: orangered;
+    border: 1px solid orangered;
+    width: fit-content;
+    padding: 12px;
+    font-size: large;
+  }
+
+  &__button {
+    background-color: greenyellow; /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interno del botón (ajusta según tus preferencias) */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 4px; /* Borde redondeado (ajusta según tus preferencias) */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-bottom: 10px;
+  }
+}
+p {
+  margin: 0;
 }

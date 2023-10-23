@@ -9,7 +9,7 @@
     />
     <div *ngIf="!isInCart">
       <button class="btn btn-primary" (click)="addToCart(product.id)">
-        Afageix
+        Afegeix
       </button>
     </div>
     <div *ngIf="isInCart">
@@ -17,23 +17,21 @@
         class="btn btn-primary-remove"
         (click)="removeFromCart(product.id)"
       >
-        Treu
+        Elimina
       </button>
     </div>
   </div>
   <div class="cart-right">
-    <div class="card-body">
-      <h5 class="card-title">{{ product.nombre }}</h5>
-      <p class="card-text">
-        <strong>Precio: ${{ product.precio }}</strong>
-        <br />
-        <strong *ngIf="!isInCart">Numero en stock: {{ product.stock }}</strong>
-      </p>
+    <h5 class="card-title">{{ product.nombre }}</h5>
+    <p class="card-text">
+      <strong>Preu: ${{ product.precio }} per unitat</strong>
+      <br />
+      <strong *ngIf="!isInCart">Numero en stock: {{ product.stock }}</strong>
+    </p>
 
-      <button class="btn btn-secondary" (click)="viewDetails(product.id)">
-        Visualitza els detalls
-      </button>
-      <div *ngIf="isInCart">x{{ product.quantity }}</div>
-    </div>
+    <div *ngIf="isInCart">Quantitat: {{ product.quantity }}</div>
+    <button class="btn btn-secondary" (click)="viewDetails(product.id)">
+      Visualitza els detalls
+    </button>
   </div>
 </div>

@@ -17,12 +17,10 @@ export class ProductDetailModalComponent {
   public combinedData: any;
   ngOnInit() {
     this.combineDetails();
-    console.log(this.product);
   }
 
   closeModal() {
     this.closeModalEvent.emit();
-    // Implementa la lógica para cerrar el modal
   }
 
   combineDetails() {

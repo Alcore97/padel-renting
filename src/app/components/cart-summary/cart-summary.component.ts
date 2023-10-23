@@ -19,18 +19,17 @@ export class CartSummaryComponent {
   cartItems: PadelProduct[] = [];
   discountCode: string = '';
   appliedDiscount: number = 0;
-  fijo2DiscountUses: number = 3;
   attemptedDiscount = false; // Bandera para rastrear si se intentó aplicar un descuento
   showDiscountCodeError: boolean = false;
   showFijo2DiscountError: boolean = false;
   discountAppliedMessage: string = '';
-
+  alreadyAppliedMessage: string = '';
   constructor(
     private cartService: CartService,
     private router: Router,
     private purchasedServices: PurchasedProductsService,
     private discountServices: DiscountService
-  ) {} //ajddsjadksajdslka
+  ) {}
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
     this.purchasedServices.updateFinalPrice(this.getTotal());
@@ -38,8 +37,6 @@ export class CartSummaryComponent {
 
   checkIfRegisteredDiscount() {
     const temp = discountsList.includes(this.discountCode);
-    console.log({ temp }, this.discountCode);
-
     return temp;
   }
 
@@ -52,30 +49,34 @@ export class CartSummaryComponent {
       this.showDiscountCodeError = false;
       if (
         this.discountCode === 'FIJO2' &&
-        this.fijo2DiscountUses &&
         !this.discountServices.getFijoCode().alreadyUsed
       ) {
         this.discountAppliedMessage = `Código de descuento aplicado con éxito. Numero de usos restantes: ${
-          this.fijo2DiscountUses - 1
+          this.discountServices.getFijoCode().maxUses - 1
         }`;
+        this.alreadyAppliedMessage = '';
       } else if (
         this.discountCode === 'FIJO2' &&
-        this.fijo2DiscountUses &&
         this.discountServices.getFijoCode().alreadyUsed
       ) {
-        this.discountAppliedMessage = 'ya has utilizado fijo2 en esta compra';
+        this.alreadyAppliedMessage = 'Ya has utilizado fijo2 en esta compra';
+        this.discountAppliedMessage = '';
       } else if (
         this.discountCode !== 'FIJO2' &&
         !this.discountServices.getAiballCode().alreadyUsed
       ) {
         this.discountAppliedMessage = `Código de descuento aplicado con éxito`;
+        this.alreadyAppliedMessage = '';
       } else {
-        this.discountAppliedMessage =
-          'ya has utilizado AIBALL10 en esta compra';
+        this.alreadyAppliedMessage = 'Ya has utilizado AIBALL10 en esta compra';
+        this.discountAppliedMessage = '';
       }
     }
 
-    if (this.discountCode === 'FIJO2' && this.fijo2DiscountUses === 0) {
+    if (
+      this.discountCode === 'FIJO2' &&
+      this.discountServices.getFijoCode().maxUses === 0
+    ) {
       this.showFijo2DiscountError = true;
       this.discountAppliedMessage = '';
     } else {
@@ -93,13 +94,11 @@ export class CartSummaryComponent {
   }
   applyDiscount() {
     this.attemptedDiscount = true;
-    console.log(this.fijo2DiscountUses);
     const discountMap: { [key: string]: number } = {
-      AIBALL10: 0.1, // 10% de descuento
-      FIJO2: 2, // Descuento de 2€
+      AIBALL10: 0.1,
+      FIJO2: 2,
     };
     this.manageErrors();
-    console.log(this.discountServices.getAiballCode().alreadyUsed);
     if (
       this.discountCode === 'AIBALL10' &&
       !this.discountServices.getAiballCode().alreadyUsed
@@ -108,31 +107,25 @@ export class CartSummaryComponent {
       this.purchasedServices.updateFinalPrice(
         this.calculateTotalWithDiscount()
       );
-      this.discountServices.setAiballCodeToUsed();
+      this.discountServices.getAiballCode().alreadyUsed = true;
     } else if (
       this.discountCode === 'FIJO2' &&
-      this.fijo2DiscountUses > 0 &&
+      this.discountServices.getFijoCode().maxUses > 0 &&
       !this.discountServices.getFijoCode().alreadyUsed
     ) {
-      this.appliedDiscount = this.appliedDiscount || 0; // Solo establece si no hay descuento previo
+      this.appliedDiscount = this.appliedDiscount || 0;
       this.appliedDiscount += discountMap['FIJO2'];
-      this.fijo2DiscountUses -= 1;
+      this.discountServices.getFijoCode().maxUses--;
       this.purchasedServices.updateFinalPrice(
         this.calculateTotalWithDiscount()
       );
-      this.discountServices.setFijoCodeToUsed();
+      this.discountServices.getFijoCode().alreadyUsed = true;
     } else {
-      // No se establece appliedDiscount en 0 para mantener el descuento previo
-      // Esto permite que los descuentos acumulados no se desapliquen al ingresar un nuevo código inválido
     }
 
-    this.discountCode = ''; // Limpiar el campo de entrada
+    this.discountCode = '';
   }
   calculateTotalWithDiscount(): number {
     return this.getTotal() - this.appliedDiscount;
-  }
-
-  checkout() {
-    this.router.navigate(['/checkout']);
   }
 }

@@ -1,4 +1,28 @@
-<p>pre-checkout works!</p>
-<button routerLink="">Anar a la home</button>
-<app-cart-summary></app-cart-summary>
+<div class="checkout__container">
+  <div class="checkout__title">
+    <p>Pagament</p>
+  </div>
+  <p class="checkout__secondarytTitle" *ngIf="cartItems.length === 0">
+    No pots pagar si no tens productes ;)
+  </p>
+  <div class="checkout__inner" *ngIf="cartItems.length !== 0">
+    <app-cart-summary></app-cart-summary>
+    <div class="checkout__content">
+      <form>
+        <label for="cardNumber">Número de Tarjeta:</label>
+        <input
+          type="text"
+          id="cardNumber"
+          [(ngModel)]="cardNumber"
+          name="cardNumber"
+        />
+      </form>
+      <button class="checkout__button" (click)="makePayment()">PAGAR</button>
+      <p class="error-message" *ngIf="showNotAuthorizatedCard">
+        {{ showNotAuthorizatedCard }}
+      </p>
+    </div>
+  </div>
+</div>
+
 <app-bottom-navbar [selectedIndex]="3"></app-bottom-navbar>

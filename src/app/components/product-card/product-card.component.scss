@@ -11,6 +11,7 @@
   background-color: $primaryBoxes;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  gap: 8px;
 
   &:hover {
     transform: scale(1.03);
@@ -35,7 +36,9 @@
     color: $blackBackground;
     height: 50px;
     &-remove {
-      background-color: red;
+      color: $blackBackground;
+      height: 50px;
+      background-color: orange;
     }
   }
 

@@ -1,21 +1,32 @@
-<p>Cistella del productes selectionats</p>
-<button routerLink="">Anar a la home</button>
-<div *ngIf="cartProducts.length === 0">No hi ha productes seleccionats</div>
-<app-product-card
-  *ngFor="let item of cartProducts"
-  [product]="item"
-  [isInCart]="true"
-  (viewDetailsEvent)="viewDetailsFromCart(item)"
-  (removeFromCartEvent)="removeFormCart(item)"
-></app-product-card>
-<div class="cart-list__modal" *ngIf="showModal">
-  <app-product-detail-modal
-    [product]="productDetailsToShow"
-    (closeModalEvent)="closeModal()"
-  ></app-product-detail-modal>
+<div class="cart-list__container">
+  <div class="cart-list__title">
+    <p>Cistella</p>
+  </div>
+  <div class="cart-list__inner">
+    <div class="cart-list__secondarytTitle" *ngIf="cartProducts.length === 0">
+      <p>Encara no tens productes</p>
+    </div>
+    <app-product-card
+      *ngFor="let item of cartProducts"
+      [product]="item"
+      [isInCart]="true"
+      (viewDetailsEvent)="viewDetailsFromCart(item)"
+      (removeFromCartEvent)="removeFormCart(item)"
+    ></app-product-card>
+    <div class="cart-list__modal" *ngIf="showModal">
+      <app-product-detail-modal
+        [product]="productDetailsToShow"
+        (closeModalEvent)="closeModal()"
+      ></app-product-detail-modal>
+    </div>
+  </div>
+  <button
+    class="cart-list__button"
+    *ngIf="cartProducts.length !== 0"
+    (click)="goToCheckout()"
+  >
+    PROCEDEIX AL PAGAMENT
+  </button>
 </div>
-<button *ngIf="cartProducts.length !== 0" routerLink="/precheckout">
-  Accedeix al pas previ a pagar
-</button>
 
 <app-bottom-navbar [selectedIndex]="2"></app-bottom-navbar>

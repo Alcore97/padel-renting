@@ -24,6 +24,7 @@ export class PurchasedProductsComponent {
     // Obtener los productos comprados desde el servicio
     this.purchasedProducts =
       this.purchasedProductsService.getPurchasedProducts();
+    console.log(this.purchasedProducts);
 
     // Calcular el monto total pagado
     this.totalPaidAmount = this.calculateTotalPaidAmount();

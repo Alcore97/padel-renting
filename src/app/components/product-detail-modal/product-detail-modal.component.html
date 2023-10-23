@@ -9,7 +9,8 @@
   <div class="modal-content">
     <ul>
       <li *ngFor="let item of combinedData">
-        {{ item.label }}: {{ item.value }}
+        {{ item.label.charAt(0).toUpperCase() + item.label.slice(1) }}:
+        {{ item.value }}
       </li>
     </ul>
   </div>

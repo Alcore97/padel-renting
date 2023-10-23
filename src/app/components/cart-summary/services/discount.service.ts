@@ -20,10 +20,10 @@ export class DiscountService {
     return this.discountCodes['FIJO2'];
   }
 
-  setAiballCodeToUsed() {
-    this.discountCodes['AIBALL10'].alreadyUsed = true;
-  }
-  setFijoCodeToUsed() {
-    this.discountCodes['FIJO2'].alreadyUsed = true;
-  }
+  // setAiballCodeToUsed() {
+  //   this.discountCodes['AIBALL10'].alreadyUsed;
+  // }
+  // setFijoCodeToUsed() {
+  //   this.discountCodes['FIJO2'].alreadyUsed;
+  // }
 }

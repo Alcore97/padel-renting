@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ProductCardComponent } from '@app/components/product-card/product-card.component';
 import { ProductDetailModalComponent } from '@app/components/product-detail-modal/product-detail-modal.component';
 import { CartService } from './services/cart.service';
@@ -24,10 +24,9 @@ export class CartComponent {
   cartProducts: PadelProduct[] = [];
   productDetailsToShow: PadelProduct;
   showModal: boolean = false;
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
   ngOnInit() {
     this.cartProducts = this.cartService.getCartItems();
-    console.log(this.cartProducts);
   }
 
   viewDetailsFromCart(productToView: any) {
@@ -41,5 +40,9 @@ export class CartComponent {
 
   removeFormCart(productToRemove: any) {
     this.cartService.removeFromCart(productToRemove);
+  }
+
+  goToCheckout() {
+    this.router.navigate(['/precheckout']);
   }
 }

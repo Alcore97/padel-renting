@@ -1,0 +1,85 @@
+@import "../../../styles.scss";
+
+.checkout {
+  &__container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    font-family: $primaryFont;
+    align-items: center;
+    gap: 8px;
+
+    max-height: calc(
+      100vh - 56px
+    ); /* Resta la altura de la barra de navegación */
+    overflow: hidden; /* Oculta el desbordamiento */
+    position: relative;
+  }
+
+  &__inner {
+    max-height: 100%; /* Ajusta el alto máximo del contenedor interno al 100% */
+    overflow-y: auto; /* Agrega una barra de desplazamiento si es necesario */
+    padding: 0 16px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    background-color: $primaryBoxes;
+    border: 1px solid $primaryBoxes;
+    width: fit-content;
+    padding: 12px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+    margin-top: 8px;
+  }
+
+  &__button {
+    background-color: greenyellow; /* Color de fondo del botón */
+    color: black; /* Color del texto del botón */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interno del botón (ajusta según tus preferencias) */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 4px; /* Borde redondeado (ajusta según tus preferencias) */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  }
+  &__secondarytTitle {
+    background-color: orangered;
+    border: 1px solid orangered;
+    width: fit-content;
+    padding: 12px;
+    font-size: large;
+    margin: 0px 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    align-items: center;
+    background-color: $primaryBoxes;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    color: $whiteBackground;
+    font-weight: bold;
+    gap: 8px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.error-message {
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid red;
+  background-color: red;
+}

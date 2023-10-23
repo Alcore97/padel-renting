@@ -1,12 +1,17 @@
-<p>purchased-products works!</p>
-<h2>Productos Comprados</h2>
-
-<ul>
-  <li *ngFor="let product of purchasedProducts">
-    {{ product.nombre }} - {{ product.precio | currency }}
-  </li>
-</ul>
-
-<p>Total Pagado: {{ totalPaidAmount | currency }}</p>
+<div class="purchases__container">
+  <div class="purchases__title">
+    <p>Compres realitzades</p>
+  </div>
+  <p class="purchases__secondarytTitle" *ngIf="purchasedProducts.length === 0">
+    No tens cap producte comprat :(
+  </p>
+  <div class="purchases__inner" *ngIf="purchasedProducts.length !== 0">
+    <ul>
+      <li *ngFor="let product of purchasedProducts">
+        {{ product.nombre }} x{{ product.quantity }}
+      </li>
+    </ul>
+  </div>
+</div>
 
 <app-bottom-navbar [selectedIndex]="4"></app-bottom-navbar>

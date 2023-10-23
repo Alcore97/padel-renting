@@ -4,7 +4,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { PreCheckoutComponent } from './pages/pre-checkout/pre-checkout.component';
-import { PaymentComponent } from './pages/payment/payment.component';
 import { PurchasedProductsComponent } from './pages/purchased-products/purchased-products.component';
 
 const routes: Routes = [
@@ -12,7 +11,6 @@ const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'cart', component: CartComponent },
   { path: 'precheckout', component: PreCheckoutComponent },
-  { path: 'checkout', component: PaymentComponent },
   { path: 'purchased-products', component: PurchasedProductsComponent },
 ];
 @NgModule({

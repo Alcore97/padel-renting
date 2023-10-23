@@ -1,17 +1,21 @@
 <div class="product-list__container">
-  <p class="product-list__title">Productes</p>
-  <app-product-card
-    *ngFor="let item of productListResponse"
-    [product]="item"
-    [isInCart]="false"
-    (addToCardEvent)="storeToCart(item)"
-    (viewDetailsEvent)="openProductDetailModal($event)"
-  ></app-product-card>
-  <div class="product-list__modal" *ngIf="showModal">
-    <app-product-detail-modal
-      [product]="productDetailsToShow"
-      (closeModalEvent)="closeModal()"
-    ></app-product-detail-modal>
+  <div class="product-list__title">
+    <p>Productes</p>
+  </div>
+  <div class="product-list__inner">
+    <app-product-card
+      *ngFor="let item of productListResponse"
+      [product]="item"
+      [isInCart]="false"
+      (addToCardEvent)="storeToCart(item)"
+      (viewDetailsEvent)="openProductDetailModal($event)"
+    ></app-product-card>
+    <div class="product-list__modal" *ngIf="showModal">
+      <app-product-detail-modal
+        [product]="productDetailsToShow"
+        (closeModalEvent)="closeModal()"
+      ></app-product-detail-modal>
+    </div>
   </div>
 </div>
 <app-bottom-navbar [selectedIndex]="1"></app-bottom-navbar>

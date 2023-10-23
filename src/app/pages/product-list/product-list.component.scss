@@ -11,9 +11,19 @@
     flex-direction: column;
     font-family: $primaryFont;
     align-items: center;
-    :nth-child(1) {
-      margin: 10px;
-    }
+    gap: 8px;
+
+    max-height: calc(
+      100vh - 56px
+    ); /* Resta la altura de la barra de navegación */
+    overflow: hidden; /* Oculta el desbordamiento */
+    position: relative;
+  }
+
+  &__inner {
+    max-height: 100%; /* Ajusta el alto máximo del contenedor interno al 100% */
+    overflow-y: auto; /* Agrega una barra de desplazamiento si es necesario */
+    padding: 0 16px;
   }
 
   &__title {
@@ -26,6 +36,7 @@
     font-size: xx-large;
     font-weight: bold;
     color: white;
+    margin-top: 8px;
   }
 }
 .product-list__modal {

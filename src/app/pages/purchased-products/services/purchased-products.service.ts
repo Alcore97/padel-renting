@@ -14,10 +14,16 @@ export class PurchasedProductsService {
     );
 
     if (existingProduct) {
-      existingProduct.quantity++;
+      const clonedProduct = { ...existingProduct };
+      clonedProduct.quantity += product.quantity;
+      const index = this.purchasedProducts.findIndex(
+        (p) => p.id === product.id
+      );
+      this.purchasedProducts[index] = clonedProduct;
     } else {
-      product.quantity = 1;
-      this.purchasedProducts.push(product);
+      const newProduct = { ...product };
+      newProduct.quantity = product.quantity;
+      this.purchasedProducts.push(newProduct);
     }
   }
 

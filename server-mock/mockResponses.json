@@ -143,5 +143,150 @@
         "colores disponibles": ["Blanco", "Amarillo", "Verde"]
       }
     }
+  ],
+  "padelProductsCatala": [
+    {
+      "id": 1,
+      "nom": "Pala de Pàdel Professional",
+      "descripció": "Una pala d'alta qualitat per a jugadors avançats.",
+      "preu": 149.99,
+      "stock": 15,
+      "imatge": "assets/images/pala_padel.png",
+      "detalls": {
+        "marca": "Marca de Pàdel Pro",
+        "material": "Fibra de carboni",
+        "pes": "365 grams",
+        "nivell": "Professional",
+        "longitud": "50 cm",
+        "gruix del nucli": "38 mm",
+        "equilibri": "Mitjà"
+      }
+    },
+    {
+      "id": 2,
+      "nom": "Boles de Pàdel (Paquet de 3)",
+      "descripció": "Boles de pàdel d'alt rendiment.",
+      "preu": 9.99,
+      "stock": 50,
+      "imatge": "assets/images/pelotas_padel.png",
+      "detalls": {
+        "marca": "Boles Master",
+        "tipus": "Pressió baixa",
+        "aprovació oficial": "Federació de Pàdel",
+        "colors": ["groc", "taronja"],
+        "material de la carcassa": "Feltre",
+        "resistència a l'ús": "Alta"
+      }
+    },
+    {
+      "id": 3,
+      "nom": "Classes de Pàdel (1 hora)",
+      "descripció": "Una hora de classes amb un entrenador professional.",
+      "preu": 35.0,
+      "stock": 10,
+      "imatge": "assets/images/classe_padel.png",
+      "detalls": {
+        "durada": "1 hora",
+        "entrenador": "Juan Pérez",
+        "ubicació": "Club de Pàdel Sol",
+        "disponibilitat": "Dilluns a divendres"
+      }
+    },
+    {
+      "id": 4,
+      "nom": "Classes de Pàdel (90 minuts)",
+      "descripció": "Classes de pàdel per millorar les teves habilitats.",
+      "preu": 50.0,
+      "stock": 8,
+      "imatge": "assets/images/classe_padel_90.png",
+      "detalls": {
+        "durada": "90 minuts",
+        "entrenador": "Ana Martínez",
+        "ubicació": "Pista de Pàdel Estrella",
+        "disponibilitat": "Dissabtes i diumenges"
+      }
+    },
+    {
+      "id": 5,
+      "nom": "Raqueta de Tennis",
+      "descripció": "Una raqueta de tennis de gamma mitjana.",
+      "preu": 89.99,
+      "stock": 20,
+      "imatge": "assets/images/raqueta_tennis.png",
+      "detalls": {
+        "marca": "Marca de Tennis Pro",
+        "material del marc": "Alumini",
+        "mida del cap:": "100 polzades quadrades",
+        "patró d'encaixat": "16x19"
+      }
+    },
+    {
+      "id": 6,
+      "nom": "Sabatilles de Pàdel",
+      "descripció": "Sabatilles dissenyades per jugar a pàdel còmodament.",
+      "preu": 79.99,
+      "stock": 30,
+      "imatge": "assets/images/zapatillas_padel.png",
+      "detalls": {
+        "marca": "Sabatilles Esportives Pro",
+        "material superior": "Malla transpirable",
+        "sola": "Goma antilliscant",
+        "talles disponibles": ["36", "37", "38", "39", "40"]
+      }
+    },
+    {
+      "id": 7,
+      "nom": "Accessoris de Pàdel (Joc de 3)",
+      "descripció": "Un conjunt d'accessoris essencials per al pàdel.",
+      "preu": 19.99,
+      "stock": 25,
+      "imatge": "assets/images/accesorios_padel.png",
+      "detalls": {
+        "inclou": ["Overgrips", "Muñequeras", "Cintes d'agarre"],
+        "marques dels accessoris": ["Marca A", "Marca B"],
+        "qualitat": "Professional"
+      }
+    },
+    {
+      "id": 8,
+      "nom": "Samarreta Esportiva",
+      "descripció": "Una samarreta transpirable per a esports.",
+      "preu": 24.99,
+      "stock": 40,
+      "imatge": "assets/images/camiseta_padel.png",
+      "detalls": {
+        "marca": "Roba Esportiva Pro",
+        "material": "Políester transpirable",
+        "colors disponibles": ["Blanc", "Blau", "Negre", "Vermell"],
+        "talles": ["S", "M", "L", "XL"]
+      }
+    },
+    {
+      "id": 9,
+      "nom": "Gorra de Pàdel",
+      "descripció": "Una gorra còmoda per protegir-se del sol a la pista.",
+      "preu": 14.99,
+      "stock": 15,
+      "imatge": "assets/images/gorra_padel.png",
+      "detalls": {
+        "marca": "Accessoris Pàdel Pro",
+        "material": "Coto i polièster",
+        "talla única": "Ajustable",
+        "colors disponibles": ["Blanc", "Negre", "Blau"]
+      }
+    },
+    {
+      "id": 10,
+      "nom": "Tovallola Esportiva",
+      "descripció": "Una tovallola de secat ràpid per a esportistes.",
+      "preu": 12.99,
+      "stock": 30,
+      "imatge": "assets/images/toalla_padel.png",
+      "detalls": {
+        "material": "Microfibra",
+        "dimensions": "40 cm x 80 cm",
+        "colors disponibles": ["Blanc", "Groc", "Verd"]
+      }
+    }
   ]
 }

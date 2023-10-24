@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PadelProduct } from '@app/pages/product-list/services/product-list.model';
 
 @Component({
   standalone: true,
@@ -24,10 +23,10 @@ export class ProductDetailModalComponent {
   }
 
   combineDetails() {
-    this.combinedData = Object.keys(this.product.detalles).map((key) => {
+    this.combinedData = Object.keys(this.product.detalls).map((key) => {
       return {
         label: key,
-        value: this.product.detalles[key],
+        value: this.product.detalls[key],
       };
     });
   }

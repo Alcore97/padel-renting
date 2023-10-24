@@ -19,16 +19,15 @@ export class ProductCardComponent {
 
   ngOnInit(): void {}
 
-  addToCart(idProduct: number) {
+  addToCart() {
     this.addToCardEvent.emit();
-    // Implementa la lógica para añadir el producto al carrito aquí
   }
 
   viewDetails(idProduct: number) {
     this.viewDetailsEvent.emit(idProduct);
   }
 
-  removeFromCart(idProduct: number) {
+  removeFromCart() {
     this.removeFromCartEvent.emit();
   }
 }

@@ -21,18 +21,15 @@ export class PurchasedProductsComponent {
   ) {}
 
   ngOnInit(): void {
-    // Obtener los productos comprados desde el servicio
     this.purchasedProducts =
       this.purchasedProductsService.getPurchasedProducts();
-    console.log(this.purchasedProducts);
 
-    // Calcular el monto total pagado
     this.totalPaidAmount = this.calculateTotalPaidAmount();
   }
 
   calculateTotalPaidAmount(): number {
     return this.purchasedProducts.reduce(
-      (total, product) => total + product.quantity * product.precio,
+      (total, product) => total + product.quantity * product.preu,
       0
     );
   }

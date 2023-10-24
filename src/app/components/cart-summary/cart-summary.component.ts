@@ -84,7 +84,7 @@ export class CartSummaryComponent {
 
   getTotal(): number {
     const total = this.cartItems.reduce(
-      (total, item) => total + item.quantity * item.precio,
+      (total, item) => total + item.quantity * item.preu,
       0
     );
 
@@ -108,7 +108,6 @@ export class CartSummaryComponent {
     ) {
       this.appliedDiscount = this.appliedDiscount || 0;
       this.appliedDiscount += discountGroup['FIJO2'];
-      this.discountServices.getFijoCode().maxUses--;
 
       this.discountServices.getFijoCode().alreadyUsed = true;
     } else {

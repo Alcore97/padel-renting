@@ -6,16 +6,16 @@ export interface ProductListResponse {
 
 export interface PadelProduct {
   id: number;
-  nombre: string;
-  descripcion: string;
-  precio: number;
+  nom: string;
+  descripció: string;
+  preu: number;
   stock: number;
-  imagen: string;
+  imatge: string;
   quantity: number; // Nuevo campo
-  detalles: Detalles;
+  detalls: detalls;
 }
 
-export interface Detalles {
+export interface detalls {
   marca?: string;
   material?: string;
   peso?: string;

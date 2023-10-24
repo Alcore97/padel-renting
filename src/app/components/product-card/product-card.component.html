@@ -1,30 +1,30 @@
 <div class="product-card__container">
   <div class="product-card__left">
     <img
-      src="{{ product.imagen }}"
+      src="{{ product.imatge }}"
       class="product-card__img-top"
-      alt="{{ product.nombre }}"
+      alt="{{ product.nom }}"
       width="100"
       height="100"
     />
     <div *ngIf="!isInCart">
-      <button class="product-card__btn-primary" (click)="addToCart(product.id)">
+      <button class="product-card__btn-primary" (click)="addToCart()">
         Afegeix
       </button>
     </div>
     <div *ngIf="isInCart">
       <button
         class="product-card__btn-primary-remove"
-        (click)="removeFromCart(product.id)"
+        (click)="removeFromCart()"
       >
         Elimina
       </button>
     </div>
   </div>
   <div class="product-card__right">
-    <h5 class="product-card__title">{{ product.nombre }}</h5>
+    <h5 class="product-card__title">{{ product.nom }}</h5>
     <p class="product-card__text">
-      <strong>Preu: ${{ product.precio }} per unitat</strong>
+      <strong>Preu: ${{ product.preu }} per unitat</strong>
       <br />
       <strong *ngIf="!isInCart">Numero en stock: {{ product.stock }}</strong>
     </p>

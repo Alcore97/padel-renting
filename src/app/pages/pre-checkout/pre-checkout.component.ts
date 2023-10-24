@@ -46,7 +46,8 @@ export class PreCheckoutComponent {
         this.purchasedProductsService.addProduct(item)
       );
       this.cartService.clearCart();
-      this.discountServices.getFijoCode().maxUses--;
+      if (this.discountServices.getFijoCode().alreadyUsed)
+        this.discountServices.getFijoCode().maxUses--;
 
       this.router.navigate(['/purchased-products']);
     } else {
@@ -62,7 +63,7 @@ export class PreCheckoutComponent {
   getTotal(): number {
     const cartItems = this.cartService.getCartItems();
     return cartItems.reduce(
-      (total, item) => total + item.quantity * item.precio,
+      (total, item) => total + item.quantity * item.preu,
       0
     );
   }

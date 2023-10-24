@@ -7,6 +7,7 @@ import { PurchasedProductsService } from '../purchased-products/services/purchas
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PadelProduct } from '../product-list/services/product-list.model';
+import { DiscountService } from '@app/components/cart-summary/services/discount.service';
 
 @Component({
   standalone: true,
@@ -29,7 +30,8 @@ export class PreCheckoutComponent {
   constructor(
     private router: Router,
     private cartService: CartService,
-    private purchasedProductsService: PurchasedProductsService
+    private purchasedProductsService: PurchasedProductsService,
+    private discountServices: DiscountService
   ) {}
 
   ngOnInit() {
@@ -43,6 +45,8 @@ export class PreCheckoutComponent {
       cartItems.forEach((item) =>
         this.purchasedProductsService.addProduct(item)
       );
+      this.cartService.clearCart();
+      this.discountServices.getFijoCode().maxUses--;
 
       this.router.navigate(['/purchased-products']);
     } else {
@@ -61,9 +65,5 @@ export class PreCheckoutComponent {
       (total, item) => total + item.quantity * item.precio,
       0
     );
-  }
-
-  checkout() {
-    this.router.navigate(['/checkout']);
   }
 }

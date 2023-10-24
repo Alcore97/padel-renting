@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CartService } from '@app/pages/cart/services/cart.service';
 import { PadelProduct } from '@app/pages/product-list/services/product-list.model';
 import { Router } from '@angular/router';
-import { discountsList } from './config/ccart-summary.utils';
+import { discountMap, discountsList } from './config/cart-summary.utils';
 import { PurchasedProductsService } from '@app/pages/purchased-products/services/purchased-products.service';
 import { DiscountService } from './services/discount.service';
 
@@ -19,7 +19,7 @@ export class CartSummaryComponent {
   cartItems: PadelProduct[] = [];
   discountCode: string = '';
   appliedDiscount: number = 0;
-  attemptedDiscount = false; // Bandera para rastrear si se intentó aplicar un descuento
+  attemptedDiscount = false;
   showDiscountCodeError: boolean = false;
   showFijo2DiscountError: boolean = false;
   discountAppliedMessage: string = '';
@@ -32,12 +32,10 @@ export class CartSummaryComponent {
   ) {}
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
-    this.purchasedServices.updateFinalPrice(this.getTotal());
   }
 
   checkIfRegisteredDiscount() {
-    const temp = discountsList.includes(this.discountCode);
-    return temp;
+    return discountsList.includes(this.discountCode);
   }
 
   manageErrors() {
@@ -94,19 +92,14 @@ export class CartSummaryComponent {
   }
   applyDiscount() {
     this.attemptedDiscount = true;
-    const discountMap: { [key: string]: number } = {
-      AIBALL10: 0.1,
-      FIJO2: 2,
-    };
+    const discountGroup = discountMap;
     this.manageErrors();
     if (
       this.discountCode === 'AIBALL10' &&
       !this.discountServices.getAiballCode().alreadyUsed
     ) {
-      this.appliedDiscount += this.getTotal() * discountMap['AIBALL10'];
-      this.purchasedServices.updateFinalPrice(
-        this.calculateTotalWithDiscount()
-      );
+      this.appliedDiscount += this.getTotal() * discountGroup['AIBALL10'];
+
       this.discountServices.getAiballCode().alreadyUsed = true;
     } else if (
       this.discountCode === 'FIJO2' &&
@@ -114,11 +107,9 @@ export class CartSummaryComponent {
       !this.discountServices.getFijoCode().alreadyUsed
     ) {
       this.appliedDiscount = this.appliedDiscount || 0;
-      this.appliedDiscount += discountMap['FIJO2'];
+      this.appliedDiscount += discountGroup['FIJO2'];
       this.discountServices.getFijoCode().maxUses--;
-      this.purchasedServices.updateFinalPrice(
-        this.calculateTotalWithDiscount()
-      );
+
       this.discountServices.getFijoCode().alreadyUsed = true;
     } else {
     }

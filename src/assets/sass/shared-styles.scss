@@ -1,0 +1,22 @@
+.error-message {
+  color: $whiteBackground;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid $primaryRed;
+  background-color: $primaryRed;
+}
+.success-message {
+  color: $whiteBackground;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid $primaryGreen;
+  background-color: $primaryGreen;
+}
+
+.already-message {
+  color: $whiteBackground;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid $primaryOrange;
+  background-color: $primaryOrange;
+}

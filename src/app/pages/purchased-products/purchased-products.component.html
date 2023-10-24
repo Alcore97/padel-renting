@@ -6,7 +6,7 @@
     No tens cap producte comprat :(
   </p>
   <div class="purchases__inner" *ngIf="purchasedProducts.length !== 0">
-    <ul>
+    <ul class="purchases__box">
       <li *ngFor="let product of purchasedProducts">
         {{ product.nombre }} x{{ product.quantity }}
       </li>

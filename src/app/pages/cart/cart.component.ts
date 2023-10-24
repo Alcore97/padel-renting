@@ -39,6 +39,8 @@ export class CartComponent {
   }
 
   removeFormCart(productToRemove: any) {
+    console.log(this.cartProducts);
+
     this.cartService.removeFromCart(productToRemove);
   }
 

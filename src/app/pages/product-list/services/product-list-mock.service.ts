@@ -10,7 +10,7 @@ export const MOCKED_PADEL_PRODUCTS = mockResponses['padelProducts'];
   providedIn: 'root',
 })
 export class ProductListDataService {
-  getLastSearchesData(): Observable<any> {
+  getMockedProductsData(): Observable<any> {
     const result = new Observable((subscriber) => {
       const data = MOCKED_PADEL_PRODUCTS;
       subscriber.next(data);

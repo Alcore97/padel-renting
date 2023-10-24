@@ -2,7 +2,7 @@
 
 .cart-summary {
   &__box {
-    border: 1px solid #ccc;
+    border: 1px solid $primaryBorder;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
@@ -16,56 +16,21 @@
     color: $whiteBackground;
     font-weight: bold;
     gap: 8px;
-  }
-
-  &__box-green {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $primaryBoxes;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    color: greenyellow;
-    font-weight: bold;
-    gap: 8px;
+    &-green {
+      @extend .cart-summary__box;
+      color: greenyellow;
+    }
   }
 
   &__secondaryButton {
-    background-color: cornflowerblue; /* Color de fondo del botón */
-    color: black; /* Color del texto del botón */
+    background-color: $primaryBlue;
+    color: $whiteBackground;
     font-weight: bold;
-    padding: 10px 20px; /* Espaciado interno del botón (ajusta según tus preferencias) */
-    border: none; /* Elimina el borde del botón */
-    border-radius: 4px; /* Borde redondeado (ajusta según tus preferencias) */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
-}
-.error-message {
-  color: white;
-  font-size: 12px;
-  border-radius: 8px;
-  border: 1px solid red;
-  background-color: red;
-}
-.success-message {
-  color: white;
-  font-size: 12px;
-  border-radius: 8px;
-  border: 1px solid green;
-  background-color: green;
-}
-
-.already-message {
-  color: white;
-  font-size: 12px;
-  border-radius: 8px;
-  border: 1px solid orange;
-  background-color: orange;
 }
 
 li {

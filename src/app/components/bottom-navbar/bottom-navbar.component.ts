@@ -47,7 +47,6 @@ export class BottomNavbarComponent {
       case 4:
         this.router.navigate(['/purchased-products']);
         break;
-
       default:
         break;
     }

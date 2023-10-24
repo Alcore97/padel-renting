@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DiscountService {
+  //Servicio para manterner el estado de los codigos de descuento
   private discountCodes: {
     [key: string]: { uses: number; maxUses: number; alreadyUsed: boolean };
   } = {
@@ -19,11 +20,4 @@ export class DiscountService {
   getFijoCode() {
     return this.discountCodes['FIJO2'];
   }
-
-  // setAiballCodeToUsed() {
-  //   this.discountCodes['AIBALL10'].alreadyUsed;
-  // }
-  // setFijoCodeToUsed() {
-  //   this.discountCodes['FIJO2'].alreadyUsed;
-  // }
 }

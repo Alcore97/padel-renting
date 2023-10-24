@@ -40,7 +40,7 @@ export class ProductListComponent {
 
   getProductListFromService() {
     this._productListMockServices
-      .getLastSearchesData()
+      .getMockedProductsData()
       .pipe(first())
       .subscribe({
         next: (response: ProductListResponse) => {

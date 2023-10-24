@@ -8,7 +8,7 @@
   </ul>
   <p class="cart-summary__box">Total: ${{ getTotal().toFixed(2) }}</p>
   <div class="cart-summary__box">
-    <label for="discountCode">Código de Descuento:</label>
+    <label for="discountCode">Codi de descompte:</label>
     <input
       type="text"
       id="discountCode"
@@ -16,7 +16,7 @@
       name="discountCode"
     />
     <button class="cart-summary__secondaryButton" (click)="applyDiscount()">
-      Aplicar Descuento
+      Aplicar Descompte
     </button>
     <p class="success-message" *ngIf="discountAppliedMessage">
       {{ discountAppliedMessage }}
@@ -25,14 +25,14 @@
       {{ alreadyAppliedMessage }}
     </p>
     <p class="error-message" *ngIf="showDiscountCodeError">
-      Código de descuento no válido
+      Codi de descompte no válid
     </p>
     <p class="error-message" *ngIf="showFijo2DiscountError">
-      Ya has usado este código 3 veces
+      Ja has utilitzat aquest codi 3 vegades.
     </p>
   </div>
 
   <p class="cart-summary__box-green">
-    Total con Descuento: ${{ calculateTotalWithDiscount().toFixed(2) }}
+    Preu final: ${{ calculateTotalWithDiscount().toFixed(2) }}
   </p>
 </div>

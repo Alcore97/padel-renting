@@ -52,7 +52,7 @@ export class PreCheckoutComponent {
       this.router.navigate(['/purchased-products']);
     } else {
       this.showNotAuthorizatedCard =
-        'Tarjeta no válida. Por favor, intente con una tarjeta válida.';
+        'Tarjeta no válida. Si us plau, intenti amb un altra tarjeta';
     }
   }
 

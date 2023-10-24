@@ -49,7 +49,7 @@ export class CartSummaryComponent {
         this.discountCode === 'FIJO2' &&
         !this.discountServices.getFijoCode().alreadyUsed
       ) {
-        this.discountAppliedMessage = `Código de descuento aplicado con éxito. Numero de usos restantes: ${
+        this.discountAppliedMessage = `Codi de descompte aplicat amb exit. Número d'usos restrants: ${
           this.discountServices.getFijoCode().maxUses - 1
         }`;
         this.alreadyAppliedMessage = '';
@@ -57,16 +57,17 @@ export class CartSummaryComponent {
         this.discountCode === 'FIJO2' &&
         this.discountServices.getFijoCode().alreadyUsed
       ) {
-        this.alreadyAppliedMessage = 'Ya has utilizado fijo2 en esta compra';
+        this.alreadyAppliedMessage = 'Ya has utilitzat FIJO2 en aquesta compra';
         this.discountAppliedMessage = '';
       } else if (
         this.discountCode !== 'FIJO2' &&
         !this.discountServices.getAiballCode().alreadyUsed
       ) {
-        this.discountAppliedMessage = `Código de descuento aplicado con éxito`;
+        this.discountAppliedMessage = `Codi de descompte aplicat amb exit`;
         this.alreadyAppliedMessage = '';
       } else {
-        this.alreadyAppliedMessage = 'Ya has utilizado AIBALL10 en esta compra';
+        this.alreadyAppliedMessage =
+          'Ya has utilitzat AIBALL10 en aquesta compra';
         this.discountAppliedMessage = '';
       }
     }

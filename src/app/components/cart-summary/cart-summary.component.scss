@@ -18,7 +18,7 @@
     gap: 8px;
     &-green {
       @extend .cart-summary__box;
-      color: greenyellow;
+      color: $primaryGreen;
     }
   }
 

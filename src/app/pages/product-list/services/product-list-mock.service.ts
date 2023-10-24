@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 import mockResponses from './../../../../../server-mock/mockResponses.json';
 
-export const MOCKED_PADEL_PRODUCTS = mockResponses['padelProducts'];
 export const MOCKED_PADEL_PRODUCTS_CAT = mockResponses['padelProductsCatala'];
 
 @Injectable({

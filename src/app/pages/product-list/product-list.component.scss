@@ -13,16 +13,14 @@
     align-items: center;
     gap: 8px;
 
-    max-height: calc(
-      100vh - 56px
-    ); /* Resta la altura de la barra de navegación */
-    overflow: hidden; /* Oculta el desbordamiento */
+    max-height: calc(100vh - 56px);
+    overflow: hidden;
     position: relative;
   }
 
   &__inner {
-    max-height: 100%; /* Ajusta el alto máximo del contenedor interno al 100% */
-    overflow-y: auto; /* Agrega una barra de desplazamiento si es necesario */
+    max-height: 100%;
+    overflow-y: auto;
     padding: 0 16px;
   }
 

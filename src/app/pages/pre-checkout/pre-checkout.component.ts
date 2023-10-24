@@ -23,7 +23,6 @@ import { DiscountService } from '@app/components/cart-summary/services/discount.
 })
 export class PreCheckoutComponent {
   cardNumber: string = '';
-  totalAmount: number = 0; // Variable para el monto total
   cartItems: PadelProduct[] = [];
   showNotAuthorizatedCard: string = '';
 
@@ -35,7 +34,6 @@ export class PreCheckoutComponent {
   ) {}
 
   ngOnInit() {
-    this.totalAmount = this.purchasedProductsService.totalAmount;
     this.cartItems = this.cartService.getCartItems();
   }
   makePayment() {
@@ -58,13 +56,5 @@ export class PreCheckoutComponent {
 
   goToProductsList() {
     this.router.navigate(['/products']);
-  }
-
-  getTotal(): number {
-    const cartItems = this.cartService.getCartItems();
-    return cartItems.reduce(
-      (total, item) => total + item.quantity * item.preu,
-      0
-    );
   }
 }

@@ -23,15 +23,6 @@ export class PurchasedProductsComponent {
   ngOnInit(): void {
     this.purchasedProducts =
       this.purchasedProductsService.getPurchasedProducts();
-
-    this.totalPaidAmount = this.calculateTotalPaidAmount();
-  }
-
-  calculateTotalPaidAmount(): number {
-    return this.purchasedProducts.reduce(
-      (total, product) => total + product.quantity * product.preu,
-      0
-    );
   }
 
   goToProductsList() {
